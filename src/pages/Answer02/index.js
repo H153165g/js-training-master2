@@ -4,7 +4,11 @@ import Chart from "../../components/Chart02";
 import answer from "./answer.md";
 
 const convertData = (input) => {
-  input.sort((item1, item2) => item2.count - item1.count);
+  input.sort((item1, item2) => {
+    console.log(item1.count,item2.count)
+    console.log(item1.count-item2.count)
+    return item1.count-item2.count
+  });
   return input.slice(0, 20);
 };
 
