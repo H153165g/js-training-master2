@@ -56,7 +56,7 @@ const convertData = (input) => {
   console.log(links)
 
 
-  return { nodes: node, links: links}; // ここを作りましょう！
+  return { nodes: node, links: []}; // ここを作りましょう！
 };
 
 const Lesson = () => {
