@@ -9,12 +9,10 @@ const convertData = (input) => {
       return item.ministry === ministry
     })
     const name2 = Array.from(new Set(A.map((item) => item.bureau)))
-    
     for (let i = 0; i < name2.length; i++) {
       const B = A.filter((item) => {
         return item.bureau === name2[i]
       })
-    
       if (B.length / input.length < 0.01) {
         for(let j=0;j<A.length;j++){
           if(A[j].bureau===name2[i]){
@@ -22,26 +20,15 @@ const convertData = (input) => {
           }
         }
         name2[i] = "その他"
-      }
-      
+      } 
     }
-
-    
-    
-
     const ns2 = [...new Set(name2)]
-
-  
     return {
       name: ministry,
-      
       children: ns2.map((bureau) => {
         const B = A.filter((item) => {
-          
           return item.bureau === bureau
         })
-        
-
         const name3 = Array.from(new Set(B.map((item) => item.department)))
         for (let i = 0; i < name3.length; i++) {
           const C = B.filter((item) => {
